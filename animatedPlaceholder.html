@@ -1,91 +1,128 @@
 <!DOCTYPE html>
 
 <html>
-    <style>
-        @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
-
-        html {
-            background: linear-gradient(90deg, #00c6ff 10%, #0072ff 90%);  
-            font-family: 'PT Sans', Helvetica, Arial, sans-serif;
-            padding-top: 50px;
-        }
-
-        h1 {
-            text-shadow: 1px 1px 10px rgba(black, .5);
-        }
-
-        h1, h2 {
-            text-align: center;
-            color: white;
-            font-size: 2.5em;
-            line-height: 1.3em;
-            font-weight: 300;
-        }
-
-        h2 {
-            margin-top: 100px;
-            font-size: 1.3em;
-            font-style: italic;
-            font-weight: 100;
-        }
-
-        .body {
-            width: 100%;
-            height: 250px;
-            box-sizing: border-box;
-        }
-
-        input {
-            box-sizing: border-box;
-            font-size: 13px;
-            vertical-align: top;
-        }
-
-        .wrapper {
-            text-align: center;
-            position: relative;
-            height: 80px;
-            font-size: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .search {
-            padding: 0 30px;
-            font-size: 18px;
-            width: 60%;
-            max-width: 400px;
-            height: 80px;
-            border: 1px solid darken(white, 30%);
-            border-radius: 20px 0 0 20px;
-        }
-
-        .submit {
-            cursor: pointer;
-            border: none;
-            background: url('http://thesuiteworld.com/wp-admin/maint/search-icon-white-png-540.png') no-repeat center center, #1E1E20;
-            background-size: 35px 35px;
-            border-radius: 0 20px 20px 0;
-            padding: 15px 25px;
-            display: inline-block;
-            width: 150px;
-            height: 80px;
-        }
-    </style>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+        <![if !IE]>
+        <link type="image/x-icon" rel="icon" href="logo.png"/>
+        <![endif]>
+        <link type="image/ico" rel="shortcut icon" href="logo.png"/>
+        
+        <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Signika:400,700,600,300'>
+        
+        <title>Animated Placeholder with JQuery</title>
+        
+        <style>
+            @-ms-viewport {
+                width: device-width;
+            }
+            
+            html {
+                background: #fff;
+                font-family: Signika;
+                font-style: normal;
+                font-size: 16px;
+                line-height: 1.4em;
+                outline: none !important;
+            }
+
+            h1 {
+                margin: 60px 0;
+                line-height: 1.4em;
+            }
+
+            h1, h2 {
+                text-align: center;
+                color: #666666;
+                outline: none !important;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            .body {
+/*                width: 100%;*/
+                outline: none !important;
+            }
+
+            .wrapper {
+                position: relative;
+                margin: 60px auto;
+                height: 50px;
+/*                width: 100%;*/
+                max-width: 400px;
+                text-align: center;
+                outline: none !important;
+            }
+            
+            input {
+                box-sizing: border-box;
+                vertical-align: top;
+                outline: none !important;
+            }
+
+            .search {
+/*                float: left;*/
+                padding: 0 30px;
+                height: 50px;
+                width: 80%;
+                font-size: 14px;
+                line-height: 50px;
+                border: 1px solid #666666;
+                border-radius: 20px 0 0 20px;
+                outline: none !important;
+            }
+
+            .submit {
+                display: inline-block;
+/*                float: right;*/
+                padding: 15px 25px;
+                height: 50px;
+                width: 15%;
+                background: url('http://thesuiteworld.com/wp-admin/maint/search-icon-white-png-540.png') no-repeat center center, #1E1E20;
+                background-size: 20px 20px;
+                border: none;
+                border-radius: 0 20px 20px 0;
+                cursor: pointer;
+                outline: none !important;
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+    </head>
 
     <body>
         <div class="body">
-            <h1>Placeholder text with<br/> typing effect</h1>
+            <h1>
+                Animated Placeholder with JQuery
+                
+                <br>
+                
+                (the typing effect)
+            </h1>
             
             <div class="wrapper">
-                <input class="search" type="text" id="search" />
-                <input class="submit" type="submit" value=" " />
+                <input id="search"
+                       class="search"
+                       type="text"/>
+                
+                <input class="submit"
+                       type="submit"
+                       value=" "/>
             </div>
         </div>
         
-        <h2>Click search to reset</h2>
+        <h2>
+            Click search to reset
+        </h2>
     </body>
     
     <script>
@@ -135,8 +172,8 @@
             $(searchBar).attr("placeholder", "");
             printLetter(ph, searchBar);
         }
-
         placeholder();
+        
         $('.submit').click(function(e) {
             phCount = 0;
             e.preventDefault();
